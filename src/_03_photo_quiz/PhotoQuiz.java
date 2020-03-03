@@ -26,35 +26,45 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
-
+		String imageURL = "https://www.akc.org/wp-content/themes/akc/component-library/assets/img/welcome.jpg";
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component imageHold;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		imageHold = createImage(imageURL);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(imageHold);
 		// 5. call the pack() method on the quiz window
-
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String question = JOptionPane.showInputDialog("do u like dogs?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if(question.equalsIgnoreCase("yes")) {
+			JOptionPane.showMessageDialog(null, "you got it correct");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
-
+		if(question.equalsIgnoreCase("no")) {
+			JOptionPane.showMessageDialog(null, "you got it incorrect");
+		}
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		quizWindow.remove(imageHold);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+		String imageURL2 = "https://cdn.mos.cms.futurecdn.net/9i6Jm4qbpGXyfvkeJpQYdB-320-80.jpg";
+		Component imageHold2;
+		imageHold2 = createImage(imageURL2);
 		// 11. add the second image to the quiz window
-
+		quizWindow.add(imageHold2);
 		// 12. pack the quiz window
-
+		quizWindow.pack();
 		// 13. ask another question
-
+		String fear = JOptionPane.showInputDialog("do you like spiders?");
 		// 14+ check answer, say if correct or incorrect, etc.
-
+		if(fear.equalsIgnoreCase("yes")) {
+			JOptionPane.showMessageDialog(null, "ok... you got it incorrect");
+		}else {
+			JOptionPane.showMessageDialog(null, "you got it correct");
+		}
 	}
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
